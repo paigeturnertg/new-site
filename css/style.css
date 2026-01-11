@@ -1392,6 +1392,29 @@ h4 {
   border-top: 1px solid var(--color-cream-dark);
 }
 
+/* Blog Post Images */
+.blog-post__figure {
+  margin: var(--space-xl) 0;
+  text-align: center;
+}
+
+.blog-post__image {
+  max-width: 100%;
+  max-height: 500px;
+  width: auto;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  margin: 0 auto;
+}
+
+.blog-post__caption {
+  margin-top: var(--space-md);
+  font-size: var(--text-sm);
+  color: var(--color-gray);
+  font-style: italic;
+}
+
 /* --------------------------------------------
    Library Page
    -------------------------------------------- */
