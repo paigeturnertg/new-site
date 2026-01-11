@@ -819,21 +819,6 @@ h4 {
   box-shadow: 0 6px 20px rgba(196, 125, 125, 0.4);
 }
 
-.btn--amber {
-  background-color: transparent;
-  color: var(--color-gold-dark);
-  border: 2px solid var(--color-gold);
-  box-shadow: 0 4px 15px rgba(196, 169, 98, 0.2);
-}
-
-.btn--amber:hover {
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 100%);
-  color: var(--color-charcoal);
-  border-color: var(--color-gold);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(196, 169, 98, 0.4);
-}
-
 .btn--small {
   padding: var(--space-sm) var(--space-lg);
   font-size: var(--text-sm);
