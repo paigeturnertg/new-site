@@ -890,6 +890,7 @@ h4 {
 .bio__text {
   font-size: var(--text-lg);
   line-height: 1.9;
+  text-align: center;
 }
 
 .bio__text p {
