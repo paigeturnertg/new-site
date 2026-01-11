@@ -43,33 +43,36 @@
     </div>
   </nav>
 
-  <!-- Work Header -->
-  <header class="work-header">
-    <div class="work-header__container">
-      <div class="work-header__cover">
-        <div class="work-header__image placeholder-image" style="width: 300px; aspect-ratio: 3/4; border-radius: 0.5rem;">
-          Cover Image Coming Soon
+  <!-- Work Page with Sticky Cover -->
+  <div style="max-width: 1200px; margin: 0 auto; padding: var(--space-3xl) var(--space-lg);">
+    <div style="display: grid; grid-template-columns: 350px 1fr; gap: var(--space-3xl); align-items: start;">
+
+      <!-- Sticky Cover & Info (Left Column) -->
+      <div style="position: sticky; top: calc(var(--space-3xl) + 60px);">
+        <div class="work-header__cover" style="margin-bottom: var(--space-xl);">
+          <div class="work-header__image placeholder-image" style="width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg);">
+            Cover Image Coming Soon
+          </div>
+        </div>
+
+        <div class="work-header__info" style="text-align: left;">
+          <h1 class="work-header__title" style="margin-bottom: var(--space-sm);">Highway to Elle</h1>
+          <p class="work-header__meta" style="margin-bottom: var(--space-lg);">
+            Novel &bull; In Progress
+          </p>
+          <p class="work-header__description">
+            A cross-country road trip takes an unexpected turn when... (Add your story description here. This should be a compelling hook that draws readers in without giving away too much of the plot.)
+          </p>
         </div>
       </div>
 
-      <div class="work-header__info">
-        <h1 class="work-header__title">Highway to Elle</h1>
-        <p class="work-header__meta">
-          Novel &bull; In Progress
-        </p>
-        <p class="work-header__description">
-          A cross-country road trip takes an unexpected turn when... (Add your story description here. This should be a compelling hook that draws readers in without giving away too much of the plot.)
-        </p>
-      </div>
-    </div>
-  </header>
+      <!-- Table of Contents (Right Column) -->
+      <div>
+        <section class="toc" style="padding: 0;">
+          <div class="toc__container" style="padding: 0; max-width: none;">
+            <h2 class="toc__title">Table of Contents</h2>
 
-  <!-- Table of Contents -->
-  <section class="toc">
-    <div class="toc__container">
-      <h2 class="toc__title">Table of Contents</h2>
-
-      <ol class="toc__list">
+            <ol class="toc__list">
         <li class="toc__item">
           <a href="chapter-1.html" class="toc__link">
             <span class="toc__chapter-num">1</span>
@@ -189,14 +192,30 @@
             <span class="toc__arrow">&rarr;</span>
           </a>
         </li>
-      </ol>
-    </div>
-  </section>
+            </ol>
+          </div>
+        </section>
 
-  <!-- Back to Library -->
-  <div class="container container--content text-center mb-2xl">
-    <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        <!-- Back to Library -->
+        <div style="text-align: center; margin-top: var(--space-2xl);">
+          <a href="../../library.html" class="btn btn--secondary">&larr; Back to Library</a>
+        </div>
+      </div>
+
+    </div>
   </div>
+
+  <!-- Mobile-only responsive style -->
+  <style>
+    @media (max-width: 768px) {
+      div[style*="grid-template-columns: 350px 1fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      div[style*="position: sticky"] {
+        position: static !important;
+      }
+    }
+  </style>
 
   <!-- Footer -->
   <footer class="footer">
