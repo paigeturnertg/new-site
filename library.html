@@ -57,8 +57,8 @@
 
       <!-- Work Card: Highway to Elle -->
       <a href="works/highway-to-elle/index.html" class="work-card">
-        <div class="work-card__image" style="aspect-ratio: auto;">
-          <img src="images/works/hwyellecover.jpg" alt="Highway to Elle Cover" style="width: 100%; height: auto; object-fit: contain;">
+        <div class="work-card__image">
+          <img src="images/works/hwyellecover.jpg" alt="Highway to Elle Cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Novel</span>
@@ -74,8 +74,8 @@
 
       <!-- Work Card: Placeholder 2 -->
       <article class="work-card">
-        <div class="work-card__image placeholder-image" style="aspect-ratio: 3/4;">
-          Cover Image Coming Soon
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23D4A5A5' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23FFFFFF' opacity='0.7'%3ECover Coming Soon%3C/text%3E%3C/svg%3E" alt="Placeholder cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Short Story</span>
@@ -88,8 +88,8 @@
 
       <!-- Work Card: Placeholder 3 -->
       <article class="work-card">
-        <div class="work-card__image placeholder-image" style="aspect-ratio: 3/4;">
-          Cover Image Coming Soon
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect fill='%23C47D7D' width='400' height='400'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='24' fill='%23FFFFFF' opacity='0.7'%3ECover Coming Soon%3C/text%3E%3C/svg%3E" alt="Placeholder cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Series</span>
@@ -105,13 +105,16 @@
 
       1. Copy the work-card template below
       2. Update the href to point to your story's index page
-      3. Update the image src (or keep placeholder)
+      3. Update the image src
+         - For 2:3 ratio covers: use work-card__image (no additional class)
+         - For square covers: add work-card__image--letterbox class for dark teal letterboxing
       4. Change the tag (Novel, Short Story, Series, etc.)
       5. Update title, hashtags, and excerpt
 
+      Example with 2:3 cover:
       <a href="works/your-story/index.html" class="work-card">
-        <div class="work-card__image" style="aspect-ratio: auto;">
-          <img src="images/works/your-story-cover.jpg" alt="Your Story Title Cover" style="width: 100%; height: auto; object-fit: contain;">
+        <div class="work-card__image">
+          <img src="images/works/your-story-cover.jpg" alt="Your Story Title Cover">
         </div>
         <div class="work-card__content">
           <span class="work-card__tag">Novel</span>
@@ -122,6 +125,16 @@
           <p class="work-card__excerpt">
             Brief description goes here...
           </p>
+        </div>
+      </a>
+
+      Example with square cover (uses letterbox):
+      <a href="works/your-story/index.html" class="work-card">
+        <div class="work-card__image work-card__image--letterbox">
+          <img src="images/works/your-square-cover.jpg" alt="Your Story Title Cover">
+        </div>
+        <div class="work-card__content">
+          ...
         </div>
       </a>
       -->

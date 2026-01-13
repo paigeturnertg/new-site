@@ -973,13 +973,30 @@ h4 {
 
 .work-card__image {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 2 / 3;
+  background-color: var(--color-teal-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Image wrapper for proper scaling */
+.work-card__image img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  background-color: var(--color-cream-dark);
   transition: transform var(--transition-slow);
 }
 
-.work-card:hover .work-card__image {
+/* For square images that need letterboxing */
+.work-card__image--letterbox img {
+  object-fit: contain;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.work-card:hover .work-card__image img {
   transform: scale(1.03);
 }
 
