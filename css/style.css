@@ -959,6 +959,10 @@ h4 {
   transition: all var(--transition-base);
   border: 1px solid var(--color-cream-dark);
   position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .work-card:hover {
