@@ -1630,10 +1630,20 @@ h4 {
 
 .chapter__story-title {
   font-family: var(--font-script);
-  font-size: var(--text-3xl);
+  font-size: var(--text-4xl);
   font-style: italic;
-  color: var(--color-teal);
-  margin-bottom: var(--space-md);
+  color: var(--color-gold-dark);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.03em;
+}
+
+.chapter__story-title::before,
+.chapter__story-title::after {
+  content: '✦';
+  color: var(--color-rose-light);
+  font-size: 0.6em;
+  margin: 0 0.5em;
+  opacity: 0.7;
 }
 
 .chapter__number {
