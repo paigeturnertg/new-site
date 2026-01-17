@@ -7,6 +7,24 @@
   'use strict';
 
   // --------------------------------------------
+  // Utility: Throttle Function
+  // --------------------------------------------
+  function throttle(func, limit) {
+    let inThrottle;
+    return function() {
+      const args = arguments;
+      const context = this;
+      if (!inThrottle) {
+        func.apply(context, args);
+        inThrottle = true;
+        setTimeout(function() {
+          inThrottle = false;
+        }, limit);
+      }
+    };
+  }
+
+  // --------------------------------------------
   // Mobile Navigation Toggle
   // --------------------------------------------
   function initMobileNav() {
@@ -21,7 +39,7 @@
       navToggle.classList.add('is-active');
       navMenu.classList.add('is-open');
       if (navOverlay) navOverlay.classList.add('is-visible');
-      document.body.style.overflow = 'hidden';
+      document.body.classList.add('no-scroll');
       navToggle.setAttribute('aria-expanded', 'true');
     }
 
@@ -29,7 +47,7 @@
       navToggle.classList.remove('is-active');
       navMenu.classList.remove('is-open');
       if (navOverlay) navOverlay.classList.remove('is-visible');
-      document.body.style.overflow = '';
+      document.body.classList.remove('no-scroll');
       navToggle.setAttribute('aria-expanded', 'false');
     }
 
@@ -59,12 +77,12 @@
       }
     });
 
-    // Close menu on resize if open
-    window.addEventListener('resize', function() {
+    // Close menu on resize if open (throttled to prevent excessive calls)
+    window.addEventListener('resize', throttle(function() {
       if (window.innerWidth >= 1024 && navMenu.classList.contains('is-open')) {
         closeMenu();
       }
-    });
+    }, 200));
   }
 
   // --------------------------------------------
@@ -141,8 +159,7 @@
     const observer = new IntersectionObserver(function(entries) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('is-visible');
           observer.unobserve(entry.target);
         }
       });
@@ -152,9 +169,7 @@
     });
 
     animatedElements.forEach(function(el) {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      el.classList.add('scroll-animate');
       observer.observe(el);
     });
   }
@@ -266,14 +281,14 @@
         lightboxCaption.textContent = caption ? caption.textContent : '';
 
         lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('no-scroll');
       });
     });
 
     // Close lightbox
     function closeLightbox() {
       lightbox.classList.remove('active');
-      document.body.style.overflow = '';
+      document.body.classList.remove('no-scroll');
     }
 
     lightboxClose.addEventListener('click', closeLightbox);
