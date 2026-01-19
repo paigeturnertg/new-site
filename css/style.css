@@ -1258,6 +1258,83 @@ h4 {
   box-shadow: 0 6px 20px rgba(251, 248, 241, 0.3);
 }
 
+/* Newsletter Signup Form */
+.connect__newsletter {
+  max-width: 500px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+}
+
+.connect__newsletter-title {
+  font-family: var(--font-script);
+  font-size: var(--text-2xl);
+  font-style: italic;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-sm);
+}
+
+.connect__newsletter-text {
+  color: rgba(251, 248, 241, 0.85);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-lg);
+  line-height: 1.6;
+}
+
+.newsletter-form__group {
+  display: flex;
+  gap: var(--space-sm);
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.newsletter-form__input {
+  flex: 1;
+  padding: var(--space-md) var(--space-lg);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-charcoal);
+  background-color: var(--color-white);
+  border: 2px solid var(--color-cream);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  outline: none;
+}
+
+.newsletter-form__input::placeholder {
+  color: var(--color-gray-light);
+}
+
+.newsletter-form__input:focus {
+  border-color: var(--color-gold);
+  box-shadow: 0 0 0 4px rgba(196, 169, 98, 0.2);
+}
+
+.newsletter-form__button {
+  padding: var(--space-md) var(--space-2xl);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-teal);
+  background-color: var(--color-cream);
+  border: 2px solid var(--color-cream);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+}
+
+.newsletter-form__button:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(196, 169, 98, 0.4);
+}
+
+.newsletter-form__button:active {
+  transform: translateY(0);
+}
+
 /* --------------------------------------------
    Back to Top Button - Bookmark Style
    -------------------------------------------- */
@@ -2280,6 +2357,15 @@ h4 {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* Stack newsletter form vertically on mobile */
+  .newsletter-form__group {
+    flex-direction: column;
+  }
+
+  .newsletter-form__button {
+    width: 100%;
   }
 }
 
