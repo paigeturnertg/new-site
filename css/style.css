@@ -931,6 +931,125 @@ h4 {
 }
 
 /* --------------------------------------------
+   Journal Section
+   -------------------------------------------- */
+.journal {
+  background-color: var(--color-cream-pink);
+  padding: var(--space-3xl) 0;
+}
+
+.journal__container {
+  max-width: var(--max-width-reading);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.journal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: var(--space-xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.journal__title {
+  font-family: var(--font-script);
+  font-style: italic;
+  font-size: var(--text-3xl);
+  margin: 0;
+}
+
+.journal__view-all {
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-auburn);
+  transition: all var(--transition-base);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.journal__view-all:hover {
+  color: var(--color-auburn-light);
+  transform: translateX(4px);
+}
+
+/* Journal Card - Simpler design without images */
+.journal-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-xl);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-cream-dark);
+}
+
+.journal-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-4px);
+  border-color: var(--color-rose-light);
+}
+
+.journal-card__date {
+  display: block;
+  font-size: var(--text-sm);
+  color: var(--color-rose);
+  margin-bottom: var(--space-sm);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.journal-card__title {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-md);
+  font-family: var(--font-script);
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.journal-card__title a {
+  color: var(--color-teal);
+  transition: color var(--transition-fast);
+}
+
+.journal-card__title a:hover {
+  color: var(--color-auburn);
+}
+
+.journal-card__excerpt {
+  color: var(--color-charcoal);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  margin-bottom: var(--space-lg);
+}
+
+.journal-card__link {
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--color-auburn);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  transition: all var(--transition-base);
+}
+
+.journal-card__link::after {
+  content: '→';
+  transition: all var(--transition-bounce);
+  display: inline-block;
+}
+
+.journal-card__link:hover {
+  color: var(--color-auburn-light);
+}
+
+.journal-card__link:hover::after {
+  content: '⟶';
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------
    Featured Works Section
    -------------------------------------------- */
 .featured {
