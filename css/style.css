@@ -1265,13 +1265,6 @@ h4 {
   text-align: center;
 }
 
-.connect__newsletter-text {
-  color: rgba(251, 248, 241, 0.85);
-  font-size: var(--text-base);
-  margin-bottom: var(--space-lg);
-  line-height: 1.6;
-}
-
 .newsletter-form__group {
   display: flex;
   gap: var(--space-sm);
