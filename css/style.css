@@ -560,7 +560,7 @@ h4 {
    Hero Section - More Whimsical
    -------------------------------------------- */
 .hero {
-  padding: var(--space-3xl) 0 var(--space-4xl);
+  padding: var(--space-2xl) 0 var(--space-2xl);
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
@@ -581,7 +581,7 @@ h4 {
 .hero__container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
   align-items: center;
   max-width: var(--max-width-wide);
   margin: 0 auto;
@@ -885,7 +885,7 @@ h4 {
    Bio Section - More Personality
    -------------------------------------------- */
 .bio {
-  background-color: var(--color-white);
+  background-color: var(--color-cream);
   padding: var(--space-3xl) 0;
   position: relative;
 }
@@ -934,8 +934,9 @@ h4 {
    Journal Section
    -------------------------------------------- */
 .journal {
-  background-color: var(--color-cream-pink);
+  background-color: var(--color-white);
   padding: var(--space-3xl) 0;
+  border-top: 1px solid var(--color-cream-dark);
 }
 
 .journal__container {
@@ -1055,7 +1056,9 @@ h4 {
    -------------------------------------------- */
 .featured {
   padding: var(--space-3xl) 0;
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 50%, var(--color-cream) 100%);
+  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  border-top: 1px solid var(--color-rose-muted);
+  border-bottom: 1px solid var(--color-rose-muted);
 }
 
 .featured__header {
@@ -2139,7 +2142,7 @@ h4 {
 
   .hero__container {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-3xl);
+    gap: var(--space-2xl);
   }
 
   .hero__content {
