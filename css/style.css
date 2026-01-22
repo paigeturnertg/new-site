@@ -33,7 +33,7 @@
   /* Neutrals - warmer cream tones */
   --color-cream: #FBF8F1;
   --color-cream-dark: #F3EDE3;
-  --color-cream-pink: #FDF6F6;
+  --color-cream-pink: #fff4f8;
   --color-white: #FFFFFF;
   --color-charcoal: #2D2A26;
   --color-gray: #6B6561;
@@ -372,7 +372,7 @@ h4 {
 }
 
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .section--alt {
@@ -403,7 +403,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-xs) var(--space-lg);
   max-width: var(--max-width-wide);
   margin: 0 auto;
 }
@@ -560,7 +560,7 @@ h4 {
    Hero Section - More Whimsical
    -------------------------------------------- */
 .hero {
-  padding: var(--space-2xl) 0 var(--space-4xl);
+  padding: var(--space-xl) 0 var(--space-2xl);
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
@@ -572,9 +572,9 @@ h4 {
   position: absolute;
   top: 20%;
   right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--color-rose-muted) 0%, transparent 70%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--color-rose-muted) 0%, transparent 80%);
   pointer-events: none;
 }
 
@@ -885,8 +885,8 @@ h4 {
    Bio Section - More Personality
    -------------------------------------------- */
 .bio {
-  background-color: var(--color-cream);
-  padding: var(--space-xl) 0 var(--space-3xl);
+  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  padding: var(--space-xl) 0 var(--space-xl);
   position: relative;
   box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
 }
@@ -936,7 +936,7 @@ h4 {
    -------------------------------------------- */
 .journal {
   background-color: var(--color-white);
-  padding: var(--space-xl) 0 var(--space-3xl);
+  padding: var(--space-xl) 0 var(--space-xl);
   box-shadow: 0 2px 20px rgba(45, 42, 38, 0.04);
   position: relative;
 }
@@ -951,7 +951,7 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   flex-wrap: wrap;
   gap: var(--space-md);
 }
@@ -1057,15 +1057,15 @@ h4 {
    Featured Works Section
    -------------------------------------------- */
 .featured {
-  padding: var(--space-xl) 0 var(--space-3xl);
-  background: linear-gradient(180deg, var(--color-cream-pink) 0%, var(--color-white) 50%, var(--color-cream-pink) 100%);
+  padding: var(--space-md) 0 var(--space-xl);
+  background-color: var(--color-cream);
   box-shadow: 0 -2px 20px rgba(45, 42, 38, 0.04), 0 2px 20px rgba(45, 42, 38, 0.04);
   position: relative;
 }
 
 .featured__header {
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-lg);
 }
 
 .featured__title {
@@ -1186,7 +1186,7 @@ h4 {
   background:
     linear-gradient(135deg, var(--color-teal) 0%, var(--color-teal-dark) 100%),
     url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
-  padding: var(--space-4xl) 0;
+  padding: var(--space-2xl) 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -1610,7 +1610,7 @@ h4 {
    Library Page
    -------------------------------------------- */
 .library {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-xl) 0;
   background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
 }
 
@@ -1697,7 +1697,7 @@ h4 {
    -------------------------------------------- */
 .work-header {
   padding: var(--space-3xl) 0;
-  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-pink) 100%);
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
 }
 
 .work-header__container {
@@ -2013,21 +2013,37 @@ h4 {
    Page Header (for inner pages)
    -------------------------------------------- */
 .page-header {
-  background: linear-gradient(180deg, var(--color-white) 0%, var(--color-cream-pink) 100%);
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 10%);
   padding: var(--space-2xl) 0;
   text-align: center;
   border-bottom: 1px solid var(--color-cream-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative radial gradient accent */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--color-rose-muted) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .page-header__title {
   margin-bottom: var(--space-sm);
   font-family: var(--font-script);
   font-style: italic;
+  text-align: center;
 }
 
 .page-header__subtitle {
   color: var(--color-gray);
   font-size: var(--text-lg);
+  text-align: center;
 }
 
 /* --------------------------------------------
