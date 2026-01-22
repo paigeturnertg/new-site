@@ -2297,6 +2297,12 @@ h4 {
     grid-template-columns: auto 1fr;
     align-items: start;
   }
+
+  .about__image-wrapper {
+    position: sticky;
+    top: var(--space-2xl);
+    align-self: start;
+  }
 }
 
 /* Laptops (1024px) */
