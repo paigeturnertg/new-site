@@ -33,7 +33,7 @@
   /* Neutrals - warmer cream tones */
   --color-cream: #FBF8F1;
   --color-cream-dark: #F3EDE3;
-  --color-cream-pink: #FDF6F6;
+  --color-cream-pink: #FDF6F7;
   --color-white: #FFFFFF;
   --color-charcoal: #2D2A26;
   --color-gray: #6B6561;
@@ -561,7 +561,7 @@ h4 {
    -------------------------------------------- */
 .hero {
   padding: var(--space-xl) 0 var(--space-2xl);
-  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream) 15%, var(--color-cream-pink) 100%);
+  background: linear-gradient(180deg, var(--color-cream) 0%, var(--color-cream-pink) 100%);
   position: relative;
   overflow: hidden;
 }
