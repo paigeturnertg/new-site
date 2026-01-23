@@ -102,9 +102,11 @@
   }
 
   // --------------------------------------------
-  // Smooth Scroll for Anchor Links
+  // Smooth Scroll for Anchor Links (Same-Page Only)
   // --------------------------------------------
   function initSmoothScroll() {
+    // Only handle same-page anchor links
+    // Cross-page hash navigation uses native browser behavior (instant jump)
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -123,20 +125,6 @@
         }
       });
     });
-
-    // Handle hash in URL on page load
-    if (window.location.hash) {
-      // Use setTimeout to ensure page is fully loaded
-      setTimeout(function() {
-        const targetElement = document.querySelector(window.location.hash);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }, 100);
-    }
   }
 
   // --------------------------------------------
