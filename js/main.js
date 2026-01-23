@@ -102,9 +102,11 @@
   }
 
   // --------------------------------------------
-  // Smooth Scroll for Anchor Links
+  // Smooth Scroll for Anchor Links (Same-Page Only)
   // --------------------------------------------
   function initSmoothScroll() {
+    // Only handle same-page anchor links
+    // Cross-page hash navigation handled by handleHashOnPageLoad()
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -123,20 +125,35 @@
         }
       });
     });
+  }
 
-    // Handle hash in URL on page load
-    if (window.location.hash) {
-      // Use setTimeout to ensure page is fully loaded
+  // --------------------------------------------
+  // Handle Hash Navigation on Page Load
+  // --------------------------------------------
+  function handleHashOnPageLoad() {
+    if (!window.location.hash) return;
+
+    // Prevent browser's automatic scroll to hash
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Start at top to prevent mid-page landing
+    window.scrollTo(0, 0);
+
+    // Wait for page load and animation to complete
+    // Page has 0.4s transition animation, so wait for that plus buffer
+    window.addEventListener('load', function() {
       setTimeout(function() {
         const targetElement = document.querySelector(window.location.hash);
         if (targetElement) {
           targetElement.scrollIntoView({
-            behavior: 'smooth',
+            behavior: 'instant',
             block: 'start'
           });
         }
-      }, 100);
-    }
+      }, 500); // Wait 500ms for 400ms animation + buffer
+    });
   }
 
   // --------------------------------------------
@@ -335,6 +352,9 @@
     initBackToTop();
     initLightbox();
   }
+
+  // Handle hash navigation early (before page fully loads)
+  handleHashOnPageLoad();
 
   // Run on DOM ready
   if (document.readyState === 'loading') {
